@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package likes;
+
+service LikesService {
+  rpc GiveALike(GiveALikeRequest) returns (GiveALikeResponse) {};
+  rpc GetNumOfLikes(GetNumOfLikesRequest) returns (GetNumOfLikesResponse) {};
+}
+
+message GiveALikeRequest {
+  string postID = 1;
+}
+
+message GiveALikeResponse {
+  bool gaveALike = 1;
+}
+
+message GetNumOfLikesRequest {
+  string postID = 1;
+}
+
+message GetNumOfLikesResponse {
+  uint32 numOfLikes = 1;
+}
